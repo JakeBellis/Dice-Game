@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+    
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="">
+      </div>
+
+    </div>
+
+    <script type = "text/javascript">
+      var images = ["images/dice1.png", "images/dice2.png", "images/dice3.png", "images/dice4.png", "images/dice5.png", "images/dice6.png"];
+      var player1num = Math.floor(Math.random() * 6);
+      var player2num = Math.floor(Math.random() * 6);
+      if(player1num > player2num){
+        document.querySelector("h1").innerHTML = "Player 1 Wins!";
+      }
+      else if(player2num > player1num){
+        document.querySelector("h1").innerHTML = "Player 2 Wins!";
+      }
+      else{
+        document.querySelector("h1").innerHTML = "Tie!";
+      }
+      document.getElementsByClassName("img1")[0].setAttribute("src", images[player1num]);
+      document.getElementsByClassName("img2")[0].setAttribute("src", images[player2num]);
+      
+
+    </script>
+
+  </body>
+
+  <footer>
+    www 🎲 App Brewery 🎲 com
+  </footer>
+</html>
